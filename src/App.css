@@ -1,38 +1,148 @@
-.App {
+* {
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: url(./download\ \(3\).jpg);
+  background-size: cover;
+  background-color: #000000c4;
+  font-family: "Montserrat", sans-serif;
+}
+
+.box {
+  background-color: transparent;
+  border-radius: 3px;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* font-family: 'pacifico',cursive; */
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 450px;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  transition: 0.4s;
   text-align: center;
+  animation: color 5s infinite
+}
+@keyframes color {
+  0%{color:white}
+  10%{color:lightcoral}
+  20%{color:orange}
+  30%{color:purple}
+  40%{color:lightsalmon}
+  50%{color:limegreen}
+  60%{color:yellow}
+  70%{color:lightseagreen}
+  80%{color:cyan}
+  90%{color:lightgray}
+  100%{color:darkorchid}
+
+}
+.box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-top: 30px solid #fff;
+  border-left: 30px solid #fff;
+  box-sizing: border-box;
+}
+.box:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 30px solid #fff;
+  border-right: 30px solid #fff;
+  box-sizing: border-box;
+}
+.box .fas {
+  font-size: 25px;
+  height: 50px;
+  width: 50px;
+  line-height: 00px;
+  background-color: #ffffff;
+  color: #f1f5ef;
+}
+.box .fa2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+.box .text {
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  width: calc(100% + 60px);
+  height: calc(100% - 60px);
+  background-color: hsla(220, 60%, 48%, 0.784);
+  border-radius: 3px;
+  transition: 0.4s;
+}
+.box .text .fa1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.box .text div {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100%;
+  padding: 30px 60px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+.box .text div h3 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+.box .text div p {
+  font-size: 25px;
+}
+.box:hover {
+  transform: translate(-50%, -50%) rotateY(-20deg) skewY(3deg);
+}
+.box:hover .text {
+  transform: rotateY(20deg) skewY(-3deg);
+}
+button {
+  margin-top: 55px;
+  margin-bottom: 0px;
+  margin-right: 20px;
+  font-size: medium;
+  height: 40px;
+  width: 179px;
+  background-color: #ccecedd2;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(35, 35, 212);
+  font-size: 15px;
+  border-color: rgb(90, 125, 126);
+}
+.header{
+  position: static;
+  width: 100%;
+  height: 100px;
+  font-weight: bold;
+  text-align: center;
+  background:rgb(15, 14, 15);
+  transition: 0.3s;
+  color: rgb(252, 251, 251);
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
